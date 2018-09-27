@@ -1,0 +1,171 @@
+==480== Memcheck, a memory error detector
+==480== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==480== Using Valgrind-3.14.0.GIT and LibVEX; rerun with -h for copyright info
+==480== Command: ./test
+==480== Parent PID: 4458
+==480== 
+==480== Invalid write of size 1
+==480==    at 0x1130C4: GenKey(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x111471: main (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==  Address 0x54e2e3a is 0 bytes after a block of size 138 alloc'd
+==480==    at 0x483777F: malloc (vg_replace_malloc.c:299)
+==480==    by 0x113002: GenKey(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x111471: main (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480== 
+==480== Invalid write of size 1
+==480==    at 0x1130E3: GenKey(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x111471: main (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==  Address 0x54e2faa is 0 bytes after a block of size 298 alloc'd
+==480==    at 0x483777F: malloc (vg_replace_malloc.c:299)
+==480==    by 0x113029: GenKey(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x111471: main (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480== 
+==480== Mismatched free() / delete / delete []
+==480==    at 0x483908B: operator delete(void*, unsigned long) (vg_replace_malloc.c:585)
+==480==    by 0x114184: std::default_delete<char>::operator()(char*) const (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x113C96: std::unique_ptr<char, std::default_delete<char> >::~unique_ptr() (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x1131D0: GenKey(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x111471: main (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==  Address 0x54e2e80 is 0 bytes inside a block of size 298 alloc'd
+==480==    at 0x483777F: malloc (vg_replace_malloc.c:299)
+==480==    by 0x113029: GenKey(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x111471: main (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480== 
+==480== Mismatched free() / delete / delete []
+==480==    at 0x483908B: operator delete(void*, unsigned long) (vg_replace_malloc.c:585)
+==480==    by 0x114184: std::default_delete<char>::operator()(char*) const (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x113C96: std::unique_ptr<char, std::default_delete<char> >::~unique_ptr() (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x1131DF: GenKey(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x111471: main (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==  Address 0x54e2db0 is 0 bytes inside a block of size 138 alloc'd
+==480==    at 0x483777F: malloc (vg_replace_malloc.c:299)
+==480==    by 0x113002: GenKey(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x111471: main (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480== 
+==480== Conditional jump or move depends on uninitialised value(s)
+==480==    at 0x530CED5: _IO_file_xsputn@@GLIBC_2.2.5 (in /usr/lib/libc-2.28.so)
+==480==    by 0x5301BFB: fwrite (in /usr/lib/libc-2.28.so)
+==480==    by 0x5076D93: sputn (streambuf:458)
+==480==    by 0x5076D93: __ostream_write<char, std::char_traits<char> > (ostream_insert.h:50)
+==480==    by 0x5076D93: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (ostream_insert.h:101)
+==480==    by 0x111487: main (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480== 
+==480== Conditional jump or move depends on uninitialised value(s)
+==480==    at 0x530DD0E: _IO_file_overflow@@GLIBC_2.2.5 (in /usr/lib/libc-2.28.so)
+==480==    by 0x530ED10: _IO_default_xsputn (in /usr/lib/libc-2.28.so)
+==480==    by 0x530CF78: _IO_file_xsputn@@GLIBC_2.2.5 (in /usr/lib/libc-2.28.so)
+==480==    by 0x5301BFB: fwrite (in /usr/lib/libc-2.28.so)
+==480==    by 0x5076D93: sputn (streambuf:458)
+==480==    by 0x5076D93: __ostream_write<char, std::char_traits<char> > (ostream_insert.h:50)
+==480==    by 0x5076D93: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (ostream_insert.h:101)
+==480==    by 0x111487: main (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480== 
+==480== Syscall param write(buf) points to uninitialised byte(s)
+==480==    at 0x537C7A8: write (in /usr/lib/libc-2.28.so)
+==480==    by 0x530C85C: _IO_file_write@@GLIBC_2.2.5 (in /usr/lib/libc-2.28.so)
+==480==    by 0x530BBBE: new_do_write (in /usr/lib/libc-2.28.so)
+==480==    by 0x530D9D8: _IO_do_write@@GLIBC_2.2.5 (in /usr/lib/libc-2.28.so)
+==480==    by 0x530DDB2: _IO_file_overflow@@GLIBC_2.2.5 (in /usr/lib/libc-2.28.so)
+==480==    by 0x5076839: sputc (streambuf:441)
+==480==    by 0x5076839: std::ostream::put(char) (ostream.tcc:163)
+==480==    by 0x5076A83: std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&) (ostream:591)
+==480==    by 0x11149C: main (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==  Address 0x54e3248 is 24 bytes inside a block of size 1,024 alloc'd
+==480==    at 0x483777F: malloc (vg_replace_malloc.c:299)
+==480==    by 0x5300790: _IO_file_doallocate (in /usr/lib/libc-2.28.so)
+==480==    by 0x530EBBF: _IO_doallocbuf (in /usr/lib/libc-2.28.so)
+==480==    by 0x530DE47: _IO_file_overflow@@GLIBC_2.2.5 (in /usr/lib/libc-2.28.so)
+==480==    by 0x530CF36: _IO_file_xsputn@@GLIBC_2.2.5 (in /usr/lib/libc-2.28.so)
+==480==    by 0x5301BFB: fwrite (in /usr/lib/libc-2.28.so)
+==480==    by 0x5076D93: sputn (streambuf:458)
+==480==    by 0x5076D93: __ostream_write<char, std::char_traits<char> > (ostream_insert.h:50)
+==480==    by 0x5076D93: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (ostream_insert.h:101)
+==480==    by 0x507714C: std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) (ostream:561)
+==480==    by 0x113157: GenKey(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x111471: main (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480== 
+==480== Conditional jump or move depends on uninitialised value(s)
+==480==    at 0x530CED5: _IO_file_xsputn@@GLIBC_2.2.5 (in /usr/lib/libc-2.28.so)
+==480==    by 0x5301BFB: fwrite (in /usr/lib/libc-2.28.so)
+==480==    by 0x5076D93: sputn (streambuf:458)
+==480==    by 0x5076D93: __ostream_write<char, std::char_traits<char> > (ostream_insert.h:50)
+==480==    by 0x5076D93: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (ostream_insert.h:101)
+==480==    by 0x1114B2: main (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480== 
+==480== Conditional jump or move depends on uninitialised value(s)
+==480==    at 0x4B81E47: ??? (in /usr/lib/libcrypto.so.1.1)
+==480==    by 0x4C4FF68: PEM_read_bio (in /usr/lib/libcrypto.so.1.1)
+==480==    by 0x4C506D5: PEM_bytes_read_bio (in /usr/lib/libcrypto.so.1.1)
+==480==    by 0x4C50B60: PEM_ASN1_read_bio (in /usr/lib/libcrypto.so.1.1)
+==480==    by 0x1133B3: Encrypt(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x111563: main (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480== 
+==480== Conditional jump or move depends on uninitialised value(s)
+==480==    at 0x4C4FF83: PEM_read_bio (in /usr/lib/libcrypto.so.1.1)
+==480==    by 0x4C506D5: PEM_bytes_read_bio (in /usr/lib/libcrypto.so.1.1)
+==480==    by 0x4C50B60: PEM_ASN1_read_bio (in /usr/lib/libcrypto.so.1.1)
+==480==    by 0x1133B3: Encrypt(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x111563: main (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480== 
+==480== Mismatched free() / delete / delete []
+==480==    at 0x483908B: operator delete(void*, unsigned long) (vg_replace_malloc.c:585)
+==480==    by 0x114184: std::default_delete<char>::operator()(char*) const (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x113C96: std::unique_ptr<char, std::default_delete<char> >::~unique_ptr() (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x113536: Encrypt(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x111563: main (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==  Address 0x54e5ca0 is 0 bytes inside a block of size 45 alloc'd
+==480==    at 0x483777F: malloc (vg_replace_malloc.c:299)
+==480==    by 0x1125D3: base64(void const*, int, int*) (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x1134E9: Encrypt(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x111563: main (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480== 
+==480== Mismatched free() / delete / delete []
+==480==    at 0x483908B: operator delete(void*, unsigned long) (vg_replace_malloc.c:585)
+==480==    by 0x1144B4: std::default_delete<unsigned char>::operator()(unsigned char*) const (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x113D88: std::unique_ptr<unsigned char, std::default_delete<unsigned char> >::~unique_ptr() (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x113542: Encrypt(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x111563: main (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==  Address 0x54e49b0 is 0 bytes inside a block of size 32 alloc'd
+==480==    at 0x483777F: malloc (vg_replace_malloc.c:299)
+==480==    by 0x113433: Encrypt(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x111563: main (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480== 
+==480== Conditional jump or move depends on uninitialised value(s)
+==480==    at 0x483AC78: strlen (vg_replace_strmem.c:460)
+==480==    by 0x4B820EA: BIO_new_mem_buf (in /usr/lib/libcrypto.so.1.1)
+==480==    by 0x11365D: Decrypt(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x111605: main (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480== 
+==480== Mismatched free() / delete / delete []
+==480==    at 0x483908B: operator delete(void*, unsigned long) (vg_replace_malloc.c:585)
+==480==    by 0x1144B4: std::default_delete<unsigned char>::operator()(unsigned char*) const (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x113D88: std::unique_ptr<unsigned char, std::default_delete<unsigned char> >::~unique_ptr() (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x1137E9: Decrypt(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x111605: main (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==  Address 0x54e7390 is 0 bytes inside a block of size 32 alloc'd
+==480==    at 0x483777F: malloc (vg_replace_malloc.c:299)
+==480==    by 0x113723: Decrypt(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x111605: main (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480== 
+==480== Mismatched free() / delete / delete []
+==480==    at 0x483908B: operator delete(void*, unsigned long) (vg_replace_malloc.c:585)
+==480==    by 0x1144B4: std::default_delete<unsigned char>::operator()(unsigned char*) const (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x113D88: std::unique_ptr<unsigned char, std::default_delete<unsigned char> >::~unique_ptr() (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x11380D: Decrypt(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x111605: main (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==  Address 0x54e5f60 is 0 bytes inside a block of size 32 alloc'd
+==480==    at 0x483777F: malloc (vg_replace_malloc.c:299)
+==480==    by 0x1129A6: unbase64(char const*, int, int*) (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x113627: Decrypt(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480==    by 0x111605: main (in /home/thanhphamvan/anlab_chal/rsa_cpp/project/test)
+==480== 
+==480== 
+==480== HEAP SUMMARY:
+==480==     in use at exit: 0 bytes in 0 blocks
+==480==   total heap usage: 78,982 allocs, 78,982 frees, 6,695,739 bytes allocated
+==480== 
+==480== All heap blocks were freed -- no leaks are possible
+==480== 
+==480== For counts of detected and suppressed errors, rerun with: -v
+==480== Use --track-origins=yes to see where uninitialised values come from
+==480== ERROR SUMMARY: 1530 errors from 15 contexts (suppressed: 0 from 0)
