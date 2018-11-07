@@ -50,9 +50,6 @@ void GenKey(std::string &str_public_key, std::string &str_private_key){
 	// Create 2 in-memory BIO for public key and private key
 	BIO_MEM_ptr public_key_bio(BIO_new(BIO_s_mem()), ::BIO_free);
 	BIO_MEM_ptr private_key_bio(BIO_new(BIO_s_mem()), ::BIO_free);
-	// BIO_MEM_ptr public_key_bio(BIO_new(BIO_s_mem()), ::BIO_free);
-	// BIO_MEM_ptr private_key_bio(BIO_new(BIO_s_mem()), ::BIO_free);
-
 	// Write Public Key in Traditional PEM
 	rc = PEM_write_bio_PUBKEY(public_key_bio.get(), public_key.get());
 	assert (rc == 1);
@@ -61,30 +58,11 @@ void GenKey(std::string &str_public_key, std::string &str_private_key){
 	rc = PEM_write_bio_RSAPrivateKey(private_key_bio.get(), rsa.get(), NULL, NULL, 0, NULL, NULL);
 	assert (rc == 1);
 
-	// BIO_flush(public_key_bio.get());
-	// BIO_flush(private_key_bio.get());
-	
-	// BIO_MEM_BUF_ptr public_key_buff(BUF_MEM_new(), ::BUF_MEM_free);
-	// BIO_MEM_BUF_ptr private_key_buff(BUF_MEM_new(), ::BUF_MEM_free);
-	// BUF_MEM * public_key_bptr = nullptr;
-	// BUF_MEM * private_key_bptr = nullptr;
-
-	// BIO_get_mem_ptr(public_key_bio.get() , &public_key_bptr);
-	// BIO_get_mem_ptr(private_key_bio.get(), &private_key_bptr);
-
-	// const BUF_MEM &pkey = *(public_key_buff.get());
-	// const BUF_MEM &key = *(private_key_buff.get());
-
-	// std::cout << public_key_buff.get()->data << std::endl;
-
 	size_t pkey_length = BIO_pending(public_key_bio.get());
 	size_t key_length = BIO_pending(private_key_bio.get());
 
 	std::unique_ptr<char> pkey_buff((char *) malloc(pkey_length + 1));
 	std::unique_ptr<char> key_buff((char *) malloc(key_length + 1));
-
-	// memcpy(pkey_buff.get(), public_key_bptr->data, public_key_bptr->length - 1);
-	// memcpy(key_buff.get(), private_key_bptr->data, private_key_bptr->length - 1);  // dunno why there is always an extra '-' at the end
 
 	BIO_read(public_key_bio.get(), pkey_buff.get(), pkey_length);
 	BIO_read(private_key_bio.get(), key_buff.get(), key_length);
@@ -95,9 +73,6 @@ void GenKey(std::string &str_public_key, std::string &str_private_key){
 
 	str_public_key.assign(pkey_buff.get(), pkey_length);
 	str_private_key.assign(key_buff.get(), key_length);
-
-	// str_public_key.assign((public_key_buff.get()->data ? public_key_buff.get()->data : ""), (public_key_buff.get()->data ? public_key_buff.get()->length : 0));
-	// str_private_key.assign((private_key_buff.get()->data ? private_key_buff.get()->data : ""), (private_key_buff.get()->data ? private_key_buff.get()->length : 0));
 
 #if DEBUG
 	std::cout << "Public key buffer length: " << pkey_length << std::endl;
@@ -176,7 +151,6 @@ bool Decrypt(const std::string private_key, const std::string source,
 		printf(
 				"ERROR: Could not load PRIVATE KEY!  PEM_read_bio_RSAPrivateKey FAILED: %s\n",
 				ERR_error_string(ERR_get_error(), NULL));
-		assert(false);
 		return false;
 	}
 
