@@ -10,8 +10,8 @@
 
 int main() {
 	for (int i = 0; i < 100; i++) {
-		std::string public_key;// = "-----BEGIN PUBLIC KEY-----\nMDwwDQYJKoZIhvcNAQEBBQADKwAwKAIhANWHi0xRpCSCfHrdSXIKUtRkRBZEJVjV\n1112ro/Xc6ytAgMBAAE=\n-----END PUBLIC KEY-----";
-		std::string private_key;// = "-----BEGIN RSA PRIVATE KEY-----\nMIGsAgEAAiEA1YeLTFGkJIJ8et1JcgpS1GREFkQlWNXXXXauj9dzrK0CAwEAAQIh\nAL3rwF9SYk/C69sQRco0GnSFBBGFrnnePOPzhcKVQFoVAhEA7M3XRez6bf7qHPjp\ntutB7wIRAObWtWwcXDBmjuuKB47l5yMCEFF+fWlpJr4YDkWuO/Bhgi0CEQDe1gvi\npmn0KzzycZekQZljAhEArE4GPX905Gs7RuUKyBZmjQ==\n-----END RSA PRIVATE KEY-----";
+		std::string public_key;
+		std::string private_key;
 		
 		GenKey(public_key, private_key);
 
